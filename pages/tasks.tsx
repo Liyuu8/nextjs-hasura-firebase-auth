@@ -6,6 +6,8 @@ import { ChevronDoubleLeftIcon, LogoutIcon } from '@heroicons/react/solid'
 import { useLogout } from '../hooks/useLogout'
 import { Layout } from '../components/Layout'
 import firebase from '../firebaseConfig'
+import { NewsListMemo } from '../components/NewsList'
+import { NewsEditMemo } from '../components/NewsEdit'
 
 const Tasks: VFC = () => {
   const router = useRouter()
@@ -22,6 +24,13 @@ const Tasks: VFC = () => {
           router.push('/')
         }}
       />
+
+      <p className="mt-10 mb-5 text-blue-500 text-xl font-bold">Public News</p>
+      <div className="grid grid-cols-2 gap-40">
+        <NewsListMemo />
+        <NewsEditMemo />
+      </div>
+
       <Link href="/" passHref>
         <div className="mt-20 flex items-center cursor-pointer">
           <ChevronDoubleLeftIcon className="h-5 w-5 mx-1 text-blue-500" />
