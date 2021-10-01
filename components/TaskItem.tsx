@@ -16,6 +16,8 @@ const TaskItem: VFC<Props> = ({ task }) => {
 
   return deleteTaskMutation.isLoading ? (
     <p>Deleting...</p>
+  ) : deleteTaskMutation.error ? (
+    <p>Error...</p>
   ) : (
     <li className="my-3">
       <span className="font-bold">{task.title}</span>

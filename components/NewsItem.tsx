@@ -16,6 +16,8 @@ const NewsItem: VFC<Props> = ({ news }) => {
 
   return deleteNewsMutation.isLoading ? (
     <p>Deleting...</p>
+  ) : deleteNewsMutation.error ? (
+    <p>Error...</p>
   ) : (
     <li className="my-3">
       <span className="font-bold">{news.content}</span>

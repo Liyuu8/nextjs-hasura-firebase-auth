@@ -16,7 +16,9 @@ const NewsEdit: VFC = () => {
       : updateNewsMutation.mutate(editedNews)
   }
 
-  return (
+  return createNewsMutation.error || updateNewsMutation.error ? (
+    <div>Error...</div>
+  ) : (
     <div>
       <form onSubmit={submitHandler}>
         <input
