@@ -41,7 +41,7 @@ export const DELETE_NEWS = gql`
 
 export const GET_TASKS = gql`
   query GetTasks {
-    news {
+    tasks {
       id
       title
       created_at
