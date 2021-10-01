@@ -10,15 +10,11 @@ const NewsList: VFC = () => {
   ) : status === 'error' ? (
     <div>Error...</div>
   ) : (
-    <div>
+    <ul>
       {data?.map((news) => (
-        <div key={news.id}>
-          <ul>
-            <NewsItemMemo news={news} />
-          </ul>
-        </div>
+        <NewsItemMemo news={news} key={news.id} />
       ))}
-    </div>
+    </ul>
   )
 }
 

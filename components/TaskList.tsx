@@ -10,15 +10,11 @@ const TaskList: VFC = () => {
   ) : status === 'error' ? (
     <div>Error...</div>
   ) : (
-    <div>
+    <ul>
       {data?.map((task) => (
-        <div key={task.id}>
-          <ul>
-            <TaskItemMemo task={task} />
-          </ul>
-        </div>
+        <TaskItemMemo task={task} key={task.id} />
       ))}
-    </div>
+    </ul>
   )
 }
 
